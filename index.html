@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Электронный опрос жителей СНТ «Европейская долина 2»</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background-color: #0f172a;
+      color: #334155;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .card {
+      background: #ffffff;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
+    }
+    .header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0284c7 100%);
+      color: #ffffff;
+      padding: 24px;
+      text-align: center;
+    }
+    .badge {
+      background-color: #ef4444;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .header h2 {
+      margin: 12px 0 6px 0;
+      font-size: 20px;
+    }
+    .header p {
+      margin: 0;
+      color: #38bdf8;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+    .content {
+      padding: 28px;
+    }
+    .notice {
+      background: #f1f5f9;
+      border-left: 4px solid #0284c7;
+      padding: 12px;
+      margin-bottom: 24px;
+      font-size: 0.9em;
+      border-radius: 4px;
+      color: #475569;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    h3 {
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    label.field-label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #1e293b;
+    }
+    input[type="text"], input[type="email"], input[type="password"], textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .question {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+    .question p {
+      margin: 0 0 10px 0;
+      font-weight: 600;
+      font-size: 14px;
+      color: #0f172a;
+    }
+    .options label {
+      font-weight: normal;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #334155;
+    }
+    button {
+      width: 100%;
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #0369a1;
+    }
+    .admin-section {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px dashed #cbd5e1;
+    }
+    .hidden { display: none; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; }
+    th, td { border: 1px solid #cbd5e1; padding: 8px; text-align: left; font-size: 0.85em; }
+    th { background-color: #f1f5f9; color: #0f172a; }
+    .error-message { color: #b91c1c; background: #fef2f2; border: 1px solid #fca5a5; padding: 12px; border-radius: 6px; margin-top: 15px; font-size: 14px; }
+  </style>
+<script type="text/javascript" nonce="7bc47dc965464aef95793d61668" src="//injections.adguard.org?ts=1788432872513&amp;type=content-script&amp;dmn=prod-chat-kimi.tos-cn-beijing.volces.com&amp;url=https%3A%2F%2Fprod-chat-kimi.tos-cn-beijing.volces.com%2Fkimi-fs%2Fokc%2Fog3yb2cuvo73c%2Foutput%2Findex.html%3FX-Tos-Algorithm%3DTOS4-HMAC-SHA256%26X-Tos-Credential%3DAKLTYTJlNjgwMjY2ZDBkNDFiYmI5YWNiZDBlZmFmYjIzZTA%252F20260903%252Fcn-beijing%252Ftos%252Frequest%26X-Tos-Date%3D20260903T105440Z%26X-Tos-Expires%3D518400%26X-Tos-Signature%3D6fc9e5c92e18b3a6c470e94d0f480e6460d172e81470c44d656b45b365bc0b1e%26X-Tos-SignedHeaders%3Dhost%26response-content-disposition%3Dattachment%253B%2Bfilename%252A%253DUTF-8%2527%2527index.html&amp;app=msedge.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="7bc47dc965464aef95793d61668" src="//injections.adguard.org?ts=1788432872513&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script></head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <span class="badge">ВАЖНЫЙ ОПРОС ЖИТЕЛЕЙ</span>
+    <h2>Опрос перед собранием СНТ «Европейская долина 2»</h2>
+    <p>Собрание: 06.09.2026 в 12:00 на 17 строительном участке</p>
+  </div>
+
+  <div class="content">
+    <div class="notice">
+      <strong>Тайное голосование с авторизацией:</strong> Введенный E-mail и номер участка сверяются со «Сводным реестром». Ваши ответы записываются анонимно.
+    </div>
+
+    <form id="voteForm">
+      <h3>Раздел 1. Данные участника (Confidential)</h3>
+      <div class="form-group">
+        <label for="email" class="field-label">Адрес электронной почты (E-mail) *</label>
+        <input type="email" id="email" required placeholder="example@mail.ru">
+      </div>
+      <div class="form-group">
+        <label for="plot" class="field-label">Номер участка *</label>
+        <input type="text" id="plot" required placeholder="Например: 123">
+      </div>
+
+      <h3>Раздел 2. Основные вопросы</h3>
+
+      <div class="question">
+        <p>1. Согласны ли вы с проектом сметы СНТ, не содержащим подтверждающих первичных документов? *</p>
+        <div class="options">
+          <label><input type="radio" name="q_smeta" value="Против сметы без документов" required> Против сметы без документов</label>
+          <label><input type="radio" name="q_smeta" value="За проект сметы"> За проект сметы</label>
+          <label><input type="radio" name="q_smeta" value="Воздерживаюсь"> Воздерживаюсь</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>2. Считаете ли вы необходимым сохранение СНТ «Европейская долина 2» в текущем статусе? *</p>
+        <div class="options">
+          <label><input type="radio" name="snt_status" value="Да, в текущем формате" required> Да, СНТ необходимо в текущем формате.</label>
+          <label><input type="radio" name="snt_status" value="Да, с реорганизацией"> Да, но требуется реорганизация / смена формата управления.</label>
+          <label><input type="radio" name="snt_status" value="Нет, ликвидировать"> Нет, СНТ необходимо ликвидировать.</label>
+          <label><input type="radio" name="snt_status" value="Затрудняюсь ответить"> Затрудняюсь ответить.</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>3. Как вы оцениваете текущую работу правления СНТ? *</p>
+        <div class="options">
+          <label><input type="radio" name="board_eval" value="Полностью удовлетворен" required> Полностью удовлетворен(а)</label>
+          <label><input type="radio" name="board_eval" value="Скорее удовлетворен"> Скорее удовлетворен(а)</label>
+          <label><input type="radio" name="board_eval" value="Скорее неудовлетворен"> Скорее неудовлетворен(а)</label>
+          <label><input type="radio" name="board_eval" value="Совершенно неудовлетворен"> Совершенно не удовлетворен(а)</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>4. Какие направления работы вы считаете приоритетными? (выберите до 3-х вариантов)</p>
+        <div class="options">
+          <label><input type="checkbox" name="priority" value="Вывоз мусора"> Вывоз мусора и экологический контроль</label>
+          <label><input type="checkbox" name="priority" value="Финансовая отчетность"> Прозрачность финансовой отчетности</label>
+          <label><input type="checkbox" name="priority" value="Дороги"> Обслуживание дорог и расчистка</label>
+          <label><input type="checkbox" name="priority" value="Электричество"> Электроснабжение и освещение</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="comments" class="field-label">5. Ваши предложения и комментарии по улучшению управления:</label>
+        <textarea id="comments" rows="3" placeholder="Введите ваши комментарии..."></textarea>
+      </div>
+
+      <button type="submit">Отправить голос</button>
+    </form>
+
+    <div id="statusMessage" class="hidden"></div>
+
+    <div class="admin-section">
+      <h3>Панель администратора</h3>
+      <div id="adminAuth">
+        <div class="form-group">
+          <input type="password" id="adminPass" placeholder="Пароль администратора">
+        </div>
+        <button onclick="loadAdminData()" type="button" style="background-color: #475569;">Войти</button>
+      </div>
+
+      <div id="adminPanel" class="hidden">
+        <h4>Список проголосовавших (Из Excel-реестра)</h4>
+        <table>
+          <thead><tr><th>E-mail</th><th>Участок</th><th>Дата и время</th></tr></thead>
+          <tbody id="votersTable"></tbody>
+        </table>
+
+        <h4>Анонимные результаты голосования</h4>
+        <table>
+          <thead><tr><th>По смете</th><th>Статус СНТ</th><th>Оценка правления</th><th>Приоритеты</th><th>Комментарии</th></tr></thead>
+          <tbody id="votesTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('voteForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const priorities = Array.from(document.querySelectorAll('input[name="priority"]:checked')).map(cb => cb.value);
+    if (priorities.length > 3) {
+      alert('Выберите не более 3 приоритетных направлений');
+      return;
+    }
+
+    const data = {
+      email: document.getElementById('email').value,
+      plot: document.getElementById('plot').value,
+      q_smeta: document.querySelector('input[name="q_smeta"]:checked')?.value,
+      snt_status: document.querySelector('input[name="snt_status"]:checked')?.value,
+      board_eval: document.querySelector('input[name="board_eval"]:checked')?.value,
+      priorities: priorities,
+      comments: document.getElementById('comments').value
+    };
+
+    try {
+      const res = await fetch('/api/vote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      const msgDiv = document.getElementById('statusMessage');
+      msgDiv.classList.remove('hidden');
+
+      if (res.ok) {
+        document.getElementById('voteForm').classList.add('hidden');
+        msgDiv.innerHTML = `<h3 style="color: #0284c7; text-align: center; border: none;">${result.message || 'Ваш голос успешно принят! Спасибо за участие.'}</h3>`;
+      } else {
+        msgDiv.innerHTML = `<div class="error-message">${result.error || 'Произошла ошибка при отправке.'}</div>`;
+      }
+    } catch (err) {
+      const msgDiv = document.getElementById('statusMessage');
+      msgDiv.classList.remove('hidden');
+      msgDiv.innerHTML = `<div class="error-message">Ошибка подключения к серверу.</div>`;
+    }
+  });
+
+  async function loadAdminData() {
+    const password = document.getElementById('adminPass').value;
+    try {
+      const res = await fetch('/api/admin/data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password })
+      });
+
+      if (!res.ok) {
+        alert('Неверный пароль или ошибка доступа');
+        return;
+      }
+
+      const { voters, votes } = await res.json();
+
+      document.getElementById('adminAuth').classList.add('hidden');
+      document.getElementById('adminPanel').classList.remove('hidden');
+
+      document.getElementById('votersTable').innerHTML = voters.map(v => 
+        `<tr><td>${v.email}</td><td>${v.plot}</td><td>${v.voted_at}</td></tr>`
+      ).join('');
+
+      document.getElementById('votesTable').innerHTML = votes.map(v => 
+        `<tr><td>${v.q_smeta || '—'}</td><td>${v.snt_status}</td><td>${v.board_eval}</td><td>${v.priorities || '—'}</td><td>${v.comments || ''}</td></tr>`
+      ).join('');
+    } catch (err) {
+      alert('Ошибка при загрузке данных администратора');
+    }
+  }
+</script>
+
+</body>
+</html>
