@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Опрос собственников КП "Европейская долина 2"</title>
+    <title>Опрос жителей поселка</title>
     <style>
         * {
             box-sizing: border-box;
@@ -28,8 +28,14 @@
         }
         h2 {
             color: #0f172a;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
         }
         .form-group {
             margin-bottom: 20px;
@@ -84,9 +90,13 @@
 <body>
 
 <div class="container">
-    <h2>Электронный опрос собственников КП "Европейская долина 2"</h2>
+    <h2>Электронный опрос жителей поселка</h2>
+    <p class="subtitle">Электронный опрос организован и проводится ООО "ЭК ЕД2" по просьбе жителей поселка</p>
     
     <form id="surveyForm" action="https://formspree.io/f/xzebvepl" method="POST">
+        <!-- Поле темы письма с указанием участка -->
+        <input type="hidden" id="subjectInput" name="_subject" value="Голос жителя поселка">
+
         <div class="form-group">
             <label for="emailInput">Ваш E-mail:*</label>
             <input type="email" id="emailInput" name="email" required placeholder="example@mail.ru">
@@ -98,7 +108,7 @@
         </div>
 
         <div class="form-group">
-            <label>1. Ваша оценка сметы СНТ:*</label>
+            <label>1. Ваша оценка сметы:*</label>
             <div class="radio-group">
                 <label class="radio-option"><input type="radio" name="q_smeta" value="Поддерживаю" required> Поддерживаю</label>
                 <label class="radio-option"><input type="radio" name="q_smeta" value="Не поддерживаю"> Не поддерживаю</label>
@@ -115,7 +125,7 @@
         </div>
 
         <div class="form-group">
-            <label>3. Как вы оцениваете работу правления СНТ?*</label>
+            <label>3. Как вы оцениваете работу правления?*</label>
             <div class="radio-group">
                 <label class="radio-option"><input type="radio" name="board_eval" value="Удовлетворен(а)" required> Удовлетворен(а)</label>
                 <label class="radio-option"><input type="radio" name="board_eval" value="Не удовлетворен(а)"> Не удовлетворен(а)</label>
@@ -123,7 +133,7 @@
         </div>
 
         <div class="form-group">
-            <label>4. Приоритетные направления деятельности ООО "ЭК ЕД 2" (до 3-х вариантов):</label>
+            <label>4. Приоритетные направления (до 3-х вариантов):</label>
             <div class="checkbox-group">
                 <label class="checkbox-option"><input type="checkbox" name="priorities" value="Охрана и безопасность территории"> Охрана и безопасность территории</label>
                 <label class="checkbox-option"><input type="checkbox" name="priorities" value="Вывоз мусора и экологический контроль"> Вывоз мусора и экологический контроль</label>
@@ -146,8 +156,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('surveyForm');
     const emailInput = document.getElementById('emailInput');
+    const plotInput = document.getElementById('plotInput');
+    const subjectInput = document.getElementById('subjectInput');
 
-    // Получаем массив ранее использованных e-mail адресов
     function getVotedEmails() {
         const emails = localStorage.getItem('voted_emails');
         return emails ? JSON.parse(emails) : [];
@@ -157,14 +168,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentEmail = emailInput.value.trim().toLowerCase();
         const votedEmails = getVotedEmails();
 
-        // Проверяем, есть ли текущий e-mail в списке уже проголосовавших
         if (votedEmails.includes(currentEmail)) {
             e.preventDefault();
             alert('С данного адреса e-mail (' + currentEmail + ') голос уже был отправлен!');
             return false;
         }
 
-        // Если e-mail новый, сохраняем его в список
+        const plotNumber = plotInput.value.trim();
+        subjectInput.value = 'Опрос жителей поселка — Участок № ' + plotNumber;
+
         votedEmails.push(currentEmail);
         localStorage.setItem('voted_emails', JSON.stringify(votedEmails));
     });
