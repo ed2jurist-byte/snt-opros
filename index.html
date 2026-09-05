@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Опрос жителей поселка</title>
+    <title>Опрос собственников КП "Европейская долина 2"</title>
     <style>
         * {
             box-sizing: border-box;
@@ -90,12 +90,12 @@
 <body>
 
 <div class="container">
-    <h2>Электронный опрос жителей поселка</h2>
-    <p class="subtitle">Электронный опрос организован и проводится ООО "ЭК ЕД2" по просьбе жителей поселка</p>
+    <h2>Электронный опрос собственников КП "Европейская долина 2"</h2>
+    <p class="subtitle">Электронный опрос организован и проводится ООО "ЭК ЕД2" по просьбе жителей поселка.</p>
     
     <form id="surveyForm" action="https://formspree.io/f/xzebvepl" method="POST">
-        <!-- Поле темы письма с указанием участка -->
-        <input type="hidden" id="subjectInput" name="_subject" value="Голос жителя поселка">
+        <!-- Поле темы письма с динамической подстановкой участка -->
+        <input type="hidden" id="subjectInput" name="_subject" value="Голос собственника КП Европейская долина 2">
 
         <div class="form-group">
             <label for="emailInput">Ваш E-mail:*</label>
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const plotNumber = plotInput.value.trim();
-        subjectInput.value = 'Опрос жителей поселка — Участок № ' + plotNumber;
+        subjectInput.value = 'Опрос КП "Европейская долина 2" — Участок № ' + plotNumber;
 
         votedEmails.push(currentEmail);
         localStorage.setItem('voted_emails', JSON.stringify(votedEmails));
