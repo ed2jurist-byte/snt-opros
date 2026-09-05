@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Опрос жителей СНТ</title>
+    <title>Опрос собственников КП "Европейская долина 2"</title>
     <style>
         * {
             box-sizing: border-box;
@@ -75,12 +75,16 @@
         button:hover {
             background-color: #0369a1;
         }
+        button:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Электронный опрос жителей СНТ</h2>
+    <h2>Электронный опрос собственников КП "Европейская долина 2"</h2>
     
     <form id="surveyForm" action="https://formspree.io/f/xzebvepl" method="POST">
         <div class="form-group">
@@ -121,6 +125,7 @@
         <div class="form-group">
             <label>4. Приоритетные направления (до 3-х вариантов):</label>
             <div class="checkbox-group">
+                <label class="checkbox-option"><input type="checkbox" name="priorities" value="Охрана и безопасность территории"> Охрана и безопасность территории</label>
                 <label class="checkbox-option"><input type="checkbox" name="priorities" value="Вывоз мусора и экологический контроль"> Вывоз мусора и экологический контроль</label>
                 <label class="checkbox-option"><input type="checkbox" name="priorities" value="Прозрачность финансовой отчетности"> Прозрачность финансовой отчетности</label>
                 <label class="checkbox-option"><input type="checkbox" name="priorities" value="Обслуживание дорог и расчистка"> Обслуживание дорог и расчистка</label>
@@ -136,6 +141,30 @@
         <button type="submit" id="submitBtn">Отправить голос</button>
     </form>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('surveyForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Проверка при загрузке страницы: если уже голосовал, блокируем кнопку
+    if (localStorage.getItem('snt_voted') === 'true') {
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Вы уже проголосовали';
+    }
+
+    form.addEventListener('submit', function(e) {
+        if (localStorage.getItem('snt_voted') === 'true') {
+            e.preventDefault();
+            alert('Вы уже отправляли голос с этого устройства!');
+            return false;
+        }
+        
+        // Фиксируем факт отправки
+        localStorage.setItem('snt_voted', 'true');
+    });
+});
+</script>
 
 </body>
 </html>
